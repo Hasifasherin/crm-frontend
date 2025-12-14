@@ -1,0 +1,47 @@
+.cases {
+  padding: 30px;
+}
+
+.case-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.case-form select,
+.case-form button {
+  padding: 8px;
+}
+
+.case-form button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px;
+}
+
+th {
+  background: #f3f4f6;
+}
+
+.close {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

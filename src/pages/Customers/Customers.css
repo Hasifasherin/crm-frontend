@@ -1,0 +1,71 @@
+.customers {
+  padding: 30px;
+}
+
+.customer-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.customer-form input {
+  padding: 8px;
+  flex: 1;
+}
+
+.customer-form button {
+  padding: 8px 15px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px;
+}
+
+th {
+  background: #f3f4f6;
+}
+
+.edit {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+.delete {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+.activate {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deactivate {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
