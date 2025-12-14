@@ -23,7 +23,7 @@ export default function Login() {
       );
 
       login(res.data.token);
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
