@@ -1,71 +1,209 @@
+/* --- Container --- */
 .customers {
-  padding: 30px;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
 }
 
-.customer-form {
+.customers h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* --- Header --- */
+.customers-header {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.customer-form input {
-  padding: 8px;
-  flex: 1;
+.search-input {
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.customer-form button {
-  padding: 8px 15px;
-  background: #10b981;
-  color: white;
+/* --- Buttons --- */
+.add-btn {
+  background-color: #4e73df;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #2e59d9;
+}
+
+.edit-btn {
+  background-color: #1cc88a;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-table {
+.edit-btn:hover {
+  background-color: #17a673;
+}
+
+.delete-btn {
+  background-color: #e74a3b;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.status-toggle-btn {
+  background-color: #f6c23e;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.status-toggle-btn:hover {
+  background-color: #d4ac0d;
+}
+
+/* --- Table --- */
+.customers-table {
   width: 100%;
-  background: white;
   border-collapse: collapse;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 1rem;
 }
 
-th, td {
-  padding: 12px;
+.customers-table th,
+.customers-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-th {
-  background: #f3f4f6;
+/* --- Status Badges --- */
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
-.edit {
-  background: #6366f1;
-  color: white;
+.status-badge.active {
+  background-color: #1cc88a;
+  color: #fff;
+}
+
+.status-badge.inactive {
+  background-color: #e74a3b;
+  color: #fff;
+}
+
+/* --- Modal Overlay & Modal --- */
+.modal-overlay {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Modal Form --- */
+.modal-form input,
+.modal-form select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.save-btn {
+  background-color: #4e73df;
+  color: #fff;
+  padding: 0.5rem 1rem;
   border: none;
-  padding: 5px 10px;
-  margin-right: 5px;
-}
-
-.delete {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-}
-.activate {
-  background: #10b981;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.deactivate {
-  background: #ef4444;
-  color: white;
+.save-btn:hover {
+  background-color: #2e59d9;
+}
+
+.cancel-btn {
+  background-color: #858796;
+  color: #fff;
+  padding: 0.5rem 1rem;
   border: none;
-  padding: 5px 10px;
-  margin-left: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #6c6d7d;
+}
+
+/* --- Error Messages --- */
+.error-msg {
+  color: #e74a3b;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* --- Confirmation Modal --- */
+.confirm-modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.confirm-modal p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.confirm-modal .modal-buttons {
+  justify-content: center;
 }

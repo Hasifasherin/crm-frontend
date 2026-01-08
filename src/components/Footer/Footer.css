@@ -1,31 +1,109 @@
+/* Footer container */
 .footer {
-  background: #111827;
-  color: #d1d5db;
-  padding: 20px;
-  text-align: center;
+  background-color: #4e73df; /* match header */
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  padding: 3rem 2rem 1rem;
 }
 
-.footer-nav a {
-  margin: 0 10px;
-  color: #9ca3af;
+/* Wrapper for top sections */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Individual sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Logo section */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+  color: #ffdd59; /* accent */
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+/* Links section */
+.footer-links h3,
+.footer-socials h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.4rem 0;
+}
+
+.footer-links a {
   text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
 }
 
-.footer-nav a:hover {
-  color: #38bdf8;
+.footer-links a:hover {
+  color: #ffdd59;
 }
 
-.social {
-  margin-top: 10px;
+/* Social icons section */
+.footer-socials .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.social svg {
-  margin: 0 10px;
-  font-size: 22px;
-  cursor: pointer;
-  color: #9ca3af;
+.footer-socials a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: transform 0.2s, color 0.3s;
 }
 
-.social svg:hover {
-  color: #38bdf8;
+.footer-socials a:hover {
+  color: #ffdd59;
+  transform: scale(1.2);
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #e6e6e6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+  }
+
+  .footer-socials .social-icons {
+    justify-content: center;
+  }
 }

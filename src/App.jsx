@@ -14,9 +14,7 @@ function App() {
   const location = useLocation();
 
   // Hide header & footer on login & signup pages
-  const hideLayout =
-    location.pathname === "/login" ||
-    location.pathname === "/signup";
+  const hideLayout = ["/login", "/signup"].includes(location.pathname);
 
   return (
     <div className="app-container">
@@ -63,6 +61,16 @@ function App() {
               <ProtectedRoute>
                 <Cases />
               </ProtectedRoute>
+            }
+          />
+
+          {/* Fallback for 404 */}
+          <Route
+            path="*"
+            element={
+              <div style={{ textAlign: "center", padding: "4rem", fontSize: "1.5rem" }}>
+                Page Not Found
+              </div>
             }
           />
         </Routes>

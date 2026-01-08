@@ -1,21 +1,44 @@
 import "./Footer.css";
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-nav">
-        <a href="/">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+      <div className="footer-wrapper">
+        {/* Logo & Info */}
+        <div className="footer-section footer-logo-section">
+          <h2 className="footer-logo">
+            CRM <span>System</span>
+          </h2>
+          <p className="footer-desc">
+            Manage customers, track cases, and boost productivity with ease.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div className="footer-section footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/cases">Cases</a></li>
+          </ul>
+        </div>
+
+        {/* Socials */}
+        <div className="footer-section footer-socials">
+          <h3>Follow Us</h3>
+          <div className="social-icons">
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaLinkedinIn /></a>
+          </div>
+        </div>
       </div>
 
-      <p>© 2025 CRM System. All rights reserved.</p>
-
-      <div className="social">
-        <FaFacebook />
-        <FaTwitter />
-        <FaLinkedin />
+      <div className="footer-bottom">
+        <p>© 2025 CRM System. All Rights Reserved.</p>
       </div>
     </footer>
   );

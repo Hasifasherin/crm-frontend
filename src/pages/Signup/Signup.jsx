@@ -14,12 +14,16 @@ export default function Signup() {
     e.preventDefault();
     setError("");
 
+    if (!username || !password) {
+      setError("Please fill in all fields");
+      return;
+    }
+
     try {
       await axios.post(
         "http://localhost:5000/api/users/register",
         { username, password }
       );
-
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");
@@ -27,37 +31,35 @@ export default function Signup() {
   };
 
   return (
-    <div className="container">
-      <div className="box">
-        <h2 className="title">Signup</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2 className="auth-title">Sign Up</h2>
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="auth-error">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="text"
-            placeholder="Enter Username"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="input"
+            className="auth-input"
           />
 
           <input
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="input"
+            className="auth-input"
           />
 
-          <button type="submit" className="button">
-            Signup
-          </button>
+          <button type="submit" className="auth-button">Sign Up</button>
         </form>
 
-        <Link to="/login" className="link">
-          Already have an account? Login
-        </Link>
+        <p className="auth-footer">
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </div>
     </div>
   );

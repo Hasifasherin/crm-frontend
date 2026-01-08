@@ -14,17 +14,18 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="logo">CRM System</div>
+      <div className="header-logo" onClick={() => navigate("/")}>
+        CRM <span>System</span>
+      </div>
 
-      <nav className="nav">
+      <nav className="header-nav">
         <a href="/">Home</a>
         <a href="/customers">Customers</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/cases">Cases</a>
-
       </nav>
 
-      <div className="profile">
+      <div className="header-profile">
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>

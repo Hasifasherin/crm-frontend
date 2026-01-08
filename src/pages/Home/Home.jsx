@@ -16,14 +16,18 @@ export default function Home() {
   };
 
   return (
-    <div className="home">
-      <div className="home-content">
-        <h1>Welcome to CRM System</h1>
-        <p>
-          Manage customers, track cases, and improve customer relationships
-          efficiently.
-        </p>
-        <button onClick={handleGetStarted}>Get Started</button>
+    <div className="home-container">
+      <div className="home-overlay">
+        <div className="home-content">
+          <h1>Welcome to <span>CRM System</span></h1>
+          <p>
+            Manage customers, track cases, and improve customer relationships
+            efficiently and professionally.
+          </p>
+          <button className="home-button" onClick={handleGetStarted}>
+            Get Started
+          </button>
+        </div>
       </div>
     </div>
   );
