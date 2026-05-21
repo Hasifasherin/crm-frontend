@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../api/axios";
 import "./Signup.css";
 
 export default function Signup() {
@@ -20,8 +20,8 @@ export default function Signup() {
     }
 
     try {
-      await axios.post(
-        "http://localhost:5000/api/users/register",
+      await axiosInstance.post(
+        "/users/register",
         { username, password }
       );
       navigate("/login");

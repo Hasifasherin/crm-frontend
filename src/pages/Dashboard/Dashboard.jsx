@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
+import axiosInstance from "../../api/axios";
 import { Pie, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./Dashboard.css";
@@ -27,12 +27,8 @@ export default function Dashboard() {
         setLoading(true);
 
         const [customerRes, caseRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/customers", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          axios.get("http://localhost:5000/api/cases", {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
+          axiosInstance.get("/customers"),
+          axiosInstance.get("/cases"),
         ]);
 
         const customers = customerRes.data;

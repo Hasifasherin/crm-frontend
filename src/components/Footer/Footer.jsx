@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
         {/* Logo & Info */}
         <div className="footer-section footer-logo-section">
           <h2 className="footer-logo">
-            CRM <span>System</span>
+            CRM <span className="logo-accent">Cloud</span>
           </h2>
           <p className="footer-desc">
             Manage customers, track cases, and boost productivity with ease.
@@ -19,10 +20,10 @@ export default function Footer() {
         <div className="footer-section footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/customers">Customers</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/cases">Cases</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/customers">Customers</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/cases">Cases</Link></li>
           </ul>
         </div>
 

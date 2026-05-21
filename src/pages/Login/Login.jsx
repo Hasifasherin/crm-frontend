@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../api/axios";
 import { AuthContext } from "../../context/AuthContext";
 import "./Login.css";
 
@@ -22,8 +22,8 @@ export default function Login() {
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/users/login",
+      const res = await axiosInstance.post(
+        "/users/login",
         { username, password }
       );
       login(res.data.token);

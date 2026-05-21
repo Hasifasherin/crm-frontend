@@ -1,74 +1,156 @@
 .dashboard {
-  padding: 2rem 3rem;
+  width: 100%;
 }
 
 .dashboard h1 {
-  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--neutral-dark);
+  letter-spacing: -0.03em;
   margin-bottom: 0.2rem;
-  color: #4e73df;
 }
 
 .dashboard-subtitle {
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.dashboard-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  color: var(--neutral-muted);
+  font-size: 1rem;
   margin-bottom: 2.5rem;
 }
 
-.card {
-  padding: 1.5rem;
-  border-radius: 10px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+/* Beautiful modern KPI Cards layout */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
 }
-.card:hover { transform: translateY(-5px); }
 
-.card h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--neutral-border);
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-.card.blue { background-color: #4e73df; }
-.card.green { background-color: #1cc88a; }
-.card.red { background-color: #e74a3b; }
-.card.orange { background-color: #f6c23e; color: #333; }
-.card.yellow { background-color: #f6c23e; color: #333; }
-.card.gray { background-color: #858796; }
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
 
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.card p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Custom left borders for modern card highlights */
+.card.blue::after { background-color: var(--primary); }
+.card.green::after { background-color: var(--success); }
+.card.red::after { background-color: var(--danger); }
+.card.orange::after { background-color: var(--warning); }
+.card.yellow::after { background-color: var(--warning-hover); }
+.card.gray::after { background-color: var(--neutral-muted); }
+
+/* Chart Cards styling */
 .dashboard-charts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
 .chart-card {
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-color: #fff;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-border);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--surface);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .chart-card h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #4e73df;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.chart-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: var(--radius-sm);
+}
+
+/* Loader & Error */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+  height: 300px;
 }
 
 .error-msg {
-  color: #e74a3b;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center;
+  background-color: var(--danger-soft);
+  color: var(--danger);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--danger-hover);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
 }
 
-.loader {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #4e73df;
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .dashboard h1 {
+    font-size: 1.8rem;
+  }
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
